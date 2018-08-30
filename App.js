@@ -18,12 +18,13 @@ const Tabs = createBottomTabNavigator(
 
 const MainNav = createStackNavigator(
   {
-    Decks: {
-      screen: DeckList,
-    },
     EachDeck: {
       screen: EachDeck,
     },
+    Decks: {
+      screen: DeckList,
+    },
+
   }
 )
 
@@ -38,7 +39,7 @@ export default class App extends React.Component {
       //
       // </View>
       <View style={{flex: 1}}>
-        <Tabs />
+        <MainNav />
       </View>
     )
   }
