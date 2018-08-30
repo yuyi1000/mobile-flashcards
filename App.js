@@ -3,9 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import DeckList from './components/DeckList'
 import EachDeck from './components/EachDeck'
 import NewDeck from './components/NewDeck'
-import { createBottomTabNavigator } from 'react-navigation'
-
-
+import { createBottomTabNavigator, createStackNavigator } from 'react-navigation'
 
 const Tabs = createBottomTabNavigator(
   {
@@ -18,12 +16,28 @@ const Tabs = createBottomTabNavigator(
   },
 )
 
+const MainNav = createStackNavigator(
+  {
+    Decks: {
+      screen: DeckList,
+    },
+    EachDeck: {
+      screen: EachDeck,
+    },
+  }
+)
+
 export default class App extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Tabs />
-      </View>
+      // <View style={styles.container}>
+      //   <Text>haha</Text>
+      //   <Text>haha</Text>
+      //   <Text>haha</Text>
+      //   <MainNav />
+      //
+      // </View>
+      <Tabs />
     );
   }
 }
