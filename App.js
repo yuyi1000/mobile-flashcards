@@ -1,5 +1,5 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react'
+import { StyleSheet, Text, View } from 'react-native'
 import DeckList from './components/DeckList'
 import EachDeck from './components/EachDeck'
 import NewDeck from './components/NewDeck'
@@ -37,8 +37,10 @@ export default class App extends React.Component {
       //   <MainNav />
       //
       // </View>
-      <Tabs />
-    );
+      <View style={{flex: 1}}>
+        <Tabs />
+      </View>
+    )
   }
 }
 
@@ -49,4 +51,4 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-});
+})
