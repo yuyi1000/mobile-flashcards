@@ -1,13 +1,28 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import DeckList from './components/DeckList'
+import EachDeck from './components/EachDeck'
+import NewDeck from './components/NewDeck'
+import { createBottomTabNavigator } from 'react-navigation'
+
+
+
+const Tabs = createBottomTabNavigator(
+  {
+    Decks: {
+      screen: DeckList,
+    },
+    AddDeck: {
+      screen: NewDeck,
+    },
+  },
+)
 
 export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
+        <Tabs />
       </View>
     );
   }
