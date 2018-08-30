@@ -22,5 +22,14 @@ let sampeDecks = {
         answer: 'The combination of a function and the lexical environment within which that function was declared.'
       }
     ]
-  }
+  },
+  Python: {
+    title: 'Python',
+    questions: [
+      {
+        question: 'What is TensorFlow?',
+        answer: 'A Python library for deep learning.'
+      }
+    ]
+  },
 }
