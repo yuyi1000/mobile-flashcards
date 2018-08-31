@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, Button } from 'react-native'
 import { getDeck } from '../utils/api'
 
 class EachDeck extends Component {
@@ -28,8 +28,6 @@ class EachDeck extends Component {
       )
     }
 
-
-    console.log(deck);
     const title = deck.title
     const numberOfCards = deck.questions.length
     return (
@@ -39,6 +37,14 @@ class EachDeck extends Component {
         </Text>
         <Text>{title}</Text>
         <Text>{numberOfCards}</Text>
+        <Button
+          title='Add Card'
+          onPress={() => this.props.navigation.navigate('NewQuestion')}
+        />
+        <Button
+          title='Start Quiz'
+          onPress={() => this.props.navigation.navigate('Quiz')}
+        />
       </View>
     )
   }
