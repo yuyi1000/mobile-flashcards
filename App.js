@@ -8,29 +8,6 @@ import NewQuestion from './components/NewQuestion'
 import Quiz from './components/Quiz'
 import { createBottomTabNavigator, createStackNavigator } from 'react-navigation'
 
-// const Tabs = createBottomTabNavigator(
-//   {
-//     Decks: {
-//       screen: DeckList,
-//     },
-//     AddDeck: {
-//       screen: NewDeck,
-//     },
-//   },
-// )
-
-const MainNav = createStackNavigator(
-  {
-    EachDeck: {
-      screen: EachDeck,
-    },
-    Decks: {
-      screen: DeckList,
-    },
-
-  }
-)
-
 
 
 const DecksNavigator = createStackNavigator(
@@ -67,13 +44,7 @@ const Tabs = createBottomTabNavigator(
 export default class App extends React.Component {
   render() {
     return (
-      // <View style={styles.container}>
-      //   <Text>haha</Text>
-      //   <Text>haha</Text>
-      //   <Text>haha</Text>
-      //   <MainNav />
-      //
-      // </View>
+
       <View style={{flex: 1}}>
         <Tabs />
       </View>
