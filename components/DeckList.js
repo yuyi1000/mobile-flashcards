@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { View, Text, Button } from 'react-native'
-import { fetchDecksResults } from '../utils/api'
+import { getDecks } from '../utils/api'
 
 
 class DeckList extends Component {
@@ -10,7 +10,7 @@ class DeckList extends Component {
   }
 
   componentDidMount() {
-    fetchDecksResults()
+    getDecks()
       .then((decks) => this.setState({decks}))
   }
 
