@@ -6,7 +6,7 @@ import { getDecks } from '../utils/api'
 class DeckList extends Component {
 
   state = {
-    decks: null,
+    ready: false,
   }
 
   componentDidMount() {

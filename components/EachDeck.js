@@ -17,9 +17,9 @@ class EachDeck extends Component {
 
   render() {
     const { ready } = this.state
-    console.log(deck);
-    const deckTitle = this.props.navigation.getParam('deckTitle', 'NO-TITLE')
-    
+    // console.log(deck);
+    // const deckTitle = this.props.navigation.getParam('deckTitle', 'NO-TITLE')
+
 
 
     if (!ready) {
