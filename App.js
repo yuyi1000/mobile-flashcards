@@ -7,7 +7,9 @@ import Error from './components/Error'
 import NewQuestion from './components/NewQuestion'
 import Quiz from './components/Quiz'
 import { createBottomTabNavigator, createStackNavigator } from 'react-navigation'
-
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
+import reducer from './reducer'
 
 
 const DecksNavigator = createStackNavigator(
@@ -41,13 +43,17 @@ const Tabs = createBottomTabNavigator(
   }
 )
 
+const store = createStore(reducer)
+
+
 export default class App extends React.Component {
   render() {
     return (
-
-      <View style={{flex: 1}}>
-        <Tabs />
-      </View>
+      <Provider store={store}>
+        <View style={{flex: 1}}>
+          <Tabs />
+        </View>
+      </Provider>
     )
   }
 }
