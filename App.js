@@ -39,7 +39,7 @@ export default class App extends React.Component {
       //
       // </View>
       <View style={{flex: 1}}>
-        <MainNav />
+        <Tabs />
       </View>
     )
   }
