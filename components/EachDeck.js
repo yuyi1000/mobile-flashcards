@@ -5,19 +5,23 @@ import { getDeck } from '../utils/api'
 class EachDeck extends Component {
 
   state = {
-    deck: {},
+    // deck: {},
     ready: false,
   }
 
   componentDidMount() {
     const deckTitle = this.props.navigation.getParam('deckTitle', 'NO-TITLE')
     getDeck(deckTitle)
-      .then((deck) => this.setState({deck, ready: true}))
+      .then(() => this.setState({ready: true}))
   }
 
   render() {
-    const { deck, ready } = this.state
+    const { ready } = this.state
     console.log(deck);
+    const deckTitle = this.props.navigation.getParam('deckTitle', 'NO-TITLE')
+    
+
+
     if (!ready) {
       return (
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
