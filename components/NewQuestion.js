@@ -13,7 +13,7 @@ class NewQuestion extends Component {
         <Text>
           This is NewQuestion View.
         </Text>
-        <TextInput
+        <TextInput style={{ margin: 10, borderWidth: 1 }}
           placeholder='Question'
           onChangeText={(text) => this.setState({question: text})}
         />
