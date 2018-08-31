@@ -17,7 +17,7 @@ class EachDeck extends Component {
 
   render() {
     const { deck, ready } = this.state
-
+    console.log(deck);
     if (!ready) {
       return (
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
@@ -39,7 +39,9 @@ class EachDeck extends Component {
         <Text>{numberOfCards}</Text>
         <Button
           title='Add Card'
-          onPress={() => this.props.navigation.navigate('NewQuestion')}
+          onPress={() => this.props.navigation.navigate('NewQuestion', {
+            deckTitle: title,
+          })}
         />
         <Button
           title='Start Quiz'

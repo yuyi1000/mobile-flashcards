@@ -11,12 +11,12 @@ export function getDeck (id) {
     .then((decks) => decks[id])
 }
 
-export function addCardToDeck (id, title, card) {
-  getDeck(id)
+export function addCardToDeck (title, card) {
+  getDeck(title)
     .then((deck) => {
       deck.questions.push(card)
       AsyncStorage.mergeItem(DECKS_STORAGE_KEY, JSON.stringfy({
-        [id]: deck
+        [title]: deck
       }))
     })
 }

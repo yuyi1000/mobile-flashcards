@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { View, Text, TextInput, Button } from 'react-native'
+import { addCardToDeck } from '../utils/api'
 
 class NewQuestion extends Component {
   state = {
@@ -9,6 +10,8 @@ class NewQuestion extends Component {
 
   submit = () => {
     const { question, answer } = this.state
+    const { navigation } = this.props
+    const deckTitle = navigation.getParam('deckTitle', 'NO-TITLE')
     if (question === '') {
       alert('Please input question before submit.')
       return
@@ -19,7 +22,12 @@ class NewQuestion extends Component {
       return
     }
 
-    
+    addCardToDeck(deckTitle, {
+      question,
+      answer,
+    })
+
+    navigation.goBack()
 
   }
 
