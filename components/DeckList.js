@@ -67,4 +67,4 @@ function mapStateToProps(decks) {
 }
 
 
-export default connect()(DeckList)
+export default connect(mapStateToProps)(DeckList)
