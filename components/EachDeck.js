@@ -1,36 +1,17 @@
 import React, { Component } from 'react'
 import { View, Text, Button } from 'react-native'
 import { getDeck } from '../utils/api'
+import { connect } from 'react-redux'
+
 
 class EachDeck extends Component {
 
-  state = {
-    // deck: {},
-    ready: false,
-  }
-
-  componentDidMount() {
-    const deckTitle = this.props.navigation.getParam('deckTitle', 'NO-TITLE')
-    getDeck(deckTitle)
-      .then(() => this.setState({ready: true}))
-  }
 
   render() {
-    const { ready } = this.state
-    // console.log(deck);
-    // const deckTitle = this.props.navigation.getParam('deckTitle', 'NO-TITLE')
 
-
-
-    if (!ready) {
-      return (
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-          <Text>
-            Still loading data.
-          </Text>
-        </View>
-      )
-    }
+    const { navigation, decks } = this.props
+    const deckTitle = navigation.getParam('deckTitle', 'NO-TITLE')
+    const deck = decks[deckTitle]
 
     const title = deck.title
     const numberOfCards = deck.questions.length
@@ -56,4 +37,10 @@ class EachDeck extends Component {
   }
 }
 
-export default EachDeck
+function mapStateToProps (decks) {
+  return {
+    decks,
+  }
+}
+
+export default connect(mapStateToProps)(EachDeck)

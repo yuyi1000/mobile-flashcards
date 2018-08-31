@@ -55,9 +55,7 @@ class DeckList extends Component {
         })}
       </View>
     )
-
   }
-
 }
 
 function mapStateToProps(decks) {
@@ -65,6 +63,5 @@ function mapStateToProps(decks) {
     decks,
   }
 }
-
 
 export default connect(mapStateToProps)(DeckList)
