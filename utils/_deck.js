@@ -4,7 +4,7 @@ import { AsyncStorage } from 'react-native'
 
 export const DECKS_STORAGE_KEY = 'MobileFlashcards:decks'
 
-let sampeDecks = {
+let sampleDecks = {
   React: {
     title: 'React',
     questions: [
