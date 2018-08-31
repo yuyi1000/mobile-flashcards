@@ -1,5 +1,9 @@
 // data of sample decks is from Udacity Mobile Flashcards projects
 
+import { AsyncStorage } from 'react-native'
+
+export const DECKS_STORAGE_KEY = 'MobileFlashcards:decks'
+
 let sampeDecks = {
   React: {
     title: 'React',
@@ -32,4 +36,10 @@ let sampeDecks = {
       }
     ]
   },
+}
+
+export function formatDecksResults (result) {
+  return result === null
+    ? sampleDecks
+    : JSON.parse(result)
 }
