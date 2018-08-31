@@ -7,5 +7,7 @@ export default function decks (state={}, action) {
         ...state,
         ...action.decks,
       }
+    default :
+      return state
   }
 }
