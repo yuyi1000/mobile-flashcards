@@ -17,6 +17,10 @@ class NewQuestion extends Component {
           placeholder='Question'
           onChangeText={(text) => this.setState({question: text})}
         />
+        <TextInput style={{ margin: 10, borderWidth: 1 }}
+          placeholder='Answer'
+          onChangeText={(text) => this.setState({answer: text})}
+        />        
       </View>
     )
   }
