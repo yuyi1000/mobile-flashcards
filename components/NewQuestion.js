@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import { View, Text, TextInput, Button } from 'react-native'
 import { addCardToDeck } from '../utils/api'
+import { connect } from 'react-redux'
+import { addNewQuestion } from '../actions'
+
 
 class NewQuestion extends Component {
   state = {
@@ -10,7 +13,7 @@ class NewQuestion extends Component {
 
   submit = () => {
     const { question, answer } = this.state
-    const { navigation } = this.props
+    const { navigation, dispatch } = this.props
     const deckTitle = navigation.getParam('deckTitle', 'NO-TITLE')
     if (question === '') {
       alert('Please input question before submit.')
@@ -26,6 +29,8 @@ class NewQuestion extends Component {
       question,
       answer,
     })
+
+    dispatch(addNewQuestion(deckTitle, question, answer))
 
     navigation.goBack()
 
@@ -55,4 +60,4 @@ class NewQuestion extends Component {
 
 }
 
-export default NewQuestion
+export default connect()(NewQuestion)

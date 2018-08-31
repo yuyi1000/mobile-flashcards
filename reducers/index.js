@@ -13,10 +13,7 @@ export default function decks (state={}, action) {
         ...state,
         [title]: {
           ...state[title],
-          questions: {
-            ...state[title].questions,
-            [question]: [answer]
-          }
+          questions: state[title].questions.concat({[question]: [answer]})
         }
       }
     default :
