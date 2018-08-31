@@ -1,10 +1,26 @@
 import React, { Component } from 'react'
-import { View, Text, TextInput } from 'react-native'
+import { View, Text, TextInput, Button } from 'react-native'
 
 class NewQuestion extends Component {
   state = {
     question: '',
     answer: '',
+  }
+
+  submit = () => {
+    const { question, answer } = this.state
+    if (question === '') {
+      alert('Please input question before submit.')
+      return
+    }
+
+    if (answer === '') {
+      alert('Please input answer before submit.')
+      return
+    }
+
+    
+
   }
 
   render() {
@@ -20,7 +36,11 @@ class NewQuestion extends Component {
         <TextInput style={{ margin: 10, borderWidth: 1 }}
           placeholder='Answer'
           onChangeText={(text) => this.setState({answer: text})}
-        />        
+        />
+        <Button
+          title='Submit'
+          onPress={this.submit}
+        />
       </View>
     )
   }
