@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, Button } from 'react-native'
 
 class NewDeck extends Component {
   render() {
@@ -8,6 +8,10 @@ class NewDeck extends Component {
         <Text>
           This is NewDeck View.
         </Text>
+        <Button
+          title='Go to Decks tab'
+          onPress={() => this.props.navigation.navigate('Decks')}
+        />
       </View>
 
     )
