@@ -42,6 +42,7 @@ class DeckList extends Component {
           return (
             <Button key={key}
               title={displayInfo}
+              onPress={() => this.props.navigation.navigate('EachDeck')}
             />
           )
         })}
