@@ -9,7 +9,7 @@ import Quiz from './components/Quiz'
 import { createBottomTabNavigator, createStackNavigator } from 'react-navigation'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
-import reducer from './reducer'
+import reducer from './reducers'
 
 
 const DecksNavigator = createStackNavigator(

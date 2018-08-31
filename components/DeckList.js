@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { View, Text, Button } from 'react-native'
 import { getDecks } from '../utils/api'
+import { connect } from 'react-redux'
+import { receiveDecks } from '../actions'
 
 
 class DeckList extends Component {
@@ -10,23 +12,26 @@ class DeckList extends Component {
   }
 
   componentDidMount() {
+    const { dispatch } = this.props
     getDecks()
-      .then((decks) => this.setState({decks}))
+      .then((decks) => dispatch(receiveDecks(decks)))
+      .then(() => this.setState({ready: true}))
   }
 
   render() {
-    const { decks } = this.state
-    // console.log(decks)
-    if (decks === null) {
+    const { ready } = this.state
+    if (!ready) {
       return (
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
           <Text>
-            There are no decks.
+            Still loading.
           </Text>
         </View>
       )
     }
 
+    const { decks } = this.props
+    console.log(decks);
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
         <Text>
@@ -55,4 +60,11 @@ class DeckList extends Component {
 
 }
 
-export default DeckList
+function mapStateToProps(decks) {
+  return {
+    decks,
+  }
+}
+
+
+export default connect()(DeckList)
