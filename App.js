@@ -3,18 +3,21 @@ import { StyleSheet, Text, View } from 'react-native'
 import DeckList from './components/DeckList'
 import EachDeck from './components/EachDeck'
 import NewDeck from './components/NewDeck'
+import Error from './components/Error'
+import NewQuestion from './components/NewQuestion'
+import Quiz from './components/Quiz'
 import { createBottomTabNavigator, createStackNavigator } from 'react-navigation'
 
-const Tabs = createBottomTabNavigator(
-  {
-    Decks: {
-      screen: DeckList,
-    },
-    AddDeck: {
-      screen: NewDeck,
-    },
-  },
-)
+// const Tabs = createBottomTabNavigator(
+//   {
+//     Decks: {
+//       screen: DeckList,
+//     },
+//     AddDeck: {
+//       screen: NewDeck,
+//     },
+//   },
+// )
 
 const MainNav = createStackNavigator(
   {
@@ -25,6 +28,39 @@ const MainNav = createStackNavigator(
       screen: DeckList,
     },
 
+  }
+)
+
+
+
+const DecksNavigator = createStackNavigator(
+  {
+    DeckList: {
+      screen: DeckList,
+    },
+    EachDeck: {
+      screen: EachDeck,
+    },
+    NewQuestion: {
+      screen: NewQuestion,
+    },
+    Error: {
+      screen: Error,
+    },
+    Quiz: {
+      screen: Quiz,
+    },
+  }
+)
+
+const Tabs = createBottomTabNavigator(
+  {
+    Decks: {
+      screen: DecksNavigator,
+    },
+    AddDeck: {
+      screen: NewDeck,
+    },
   }
 )
 
