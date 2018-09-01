@@ -6,7 +6,7 @@ import { connect } from 'react-redux'
 
 class EachDeck extends Component {
 
-  removeDeck = (id) => {
+  deleteDeckBtn = (id) => {
     const { navigation } = this.props
     deleteDeck(id)
 
@@ -41,7 +41,7 @@ class EachDeck extends Component {
         />
         <Button
           title='Delete Deck'
-          onPress={(title) => this.removeDeck(title)}
+          onPress={(title) => this.deleteDeckBtn(title)}
         />
 
       </View>
