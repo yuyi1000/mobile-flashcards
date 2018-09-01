@@ -17,11 +17,11 @@ export default function decks (state={}, action) {
         }
       }
     case ADD_NEW_DECK :
-      const { title } = action
+      const { newDeckTitle } = action
       return {
         ...state,
-        [title]: {
-          title: [title],
+        [newDeckTitle]: {
+          title: [newDeckTitle],
           questions: [],
         }
       }

@@ -22,6 +22,6 @@ export function addNewQuestion (title, question, answer ) {
 export function addNewDeck (title) {
   return {
     type: ADD_NEW_DECK,
-    title,
+    newDeckTitle: title,
   }
 }

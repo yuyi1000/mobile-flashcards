@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { View, Text, Button, TextInput } from 'react-native'
 import { connect } from 'react-redux'
+import { saveDeckTitle } from '../utils/api'
+import { addNewDeck } from '../actions'
 
 
 class NewDeck extends Component {
@@ -9,7 +11,12 @@ class NewDeck extends Component {
   }
 
   submit = () => {
-    console.log('new deck submitted!');
+    // console.log('new deck submitted!');
+    const { title } = this.state
+    const { dispatch, navigation } = this.props
+    saveDeckTitle(title)
+    dispatch(addNewDeck(title))
+    navigation.navigate('DeckList')
   }
 
   render() {
