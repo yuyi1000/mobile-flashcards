@@ -1,4 +1,4 @@
-import { RECEIVE_DECKS, ADD_NEW_QUESTION, ADD_NEW_DECK } from '../actions'
+import { RECEIVE_DECKS, ADD_NEW_QUESTION, ADD_NEW_DECK, REMOVE_DECK } from '../actions'
 
 export default function decks (state={}, action) {
   switch (action.type) {
@@ -25,6 +25,10 @@ export default function decks (state={}, action) {
           questions: [],
         }
       }
+    case REMOVE_DECK :
+      const { id } = action
+      const { [id]: value, ...rest } = state
+      return rest
     default :
       return state
   }
