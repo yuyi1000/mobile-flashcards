@@ -6,6 +6,10 @@ class NewDeck extends Component {
     title: '',
   }
 
+  submit = () => {
+    console.log('new deck submitted!');
+  }
+
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
@@ -18,6 +22,10 @@ class NewDeck extends Component {
         <TextInput style={{ margin: 10, borderWidth: 1 }}
           placeholder='Deck Title'
           onChangeText={(text) => this.setState({title: text})}
+        />
+        <Button
+          title='Create Deck'
+          onPress={this.submit}
         />
 
       </View>

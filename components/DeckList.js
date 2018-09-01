@@ -31,7 +31,7 @@ class DeckList extends Component {
     }
 
     const { decks } = this.props
-    console.log(decks);
+    // console.log(decks);
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
         <Text>
