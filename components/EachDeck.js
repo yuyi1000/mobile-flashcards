@@ -6,6 +6,9 @@ import { connect } from 'react-redux'
 
 class EachDeck extends Component {
 
+  removeDeck = () => {
+
+  }
 
   render() {
 
