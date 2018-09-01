@@ -8,10 +8,11 @@ class NewDeck extends Component {
         <Text>
           This is NewDeck View.
         </Text>
-        <Button
-          title='Go to Decks tab'
-          onPress={() => this.props.navigation.navigate('Decks')}
-        />
+        <Text>
+          What is the title of your new deck?
+        </Text>
+
+
       </View>
 
     )
