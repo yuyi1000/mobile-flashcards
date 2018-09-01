@@ -2,14 +2,15 @@ import React, { Component } from 'react'
 import { View, Text, Button } from 'react-native'
 import { getDeck, deleteDeck } from '../utils/api'
 import { connect } from 'react-redux'
+import { removeDeck } from '../actions'
 
 
 class EachDeck extends Component {
 
   deleteDeckBtn = (id) => {
-    const { navigation } = this.props
+    const { navigation, dispatch } = this.props
     deleteDeck(id)
-
+    dispatch(removeDeck(id))
     navigation.goBack()
 
   }
@@ -22,6 +23,7 @@ class EachDeck extends Component {
 
     const title = deck.title
     const numberOfCards = deck.questions.length
+    // console.log(title);
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
         <Text>
