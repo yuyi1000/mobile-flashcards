@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { View, Text, Button, TextInput } from 'react-native'
+import { connect } from 'react-redux'
+
 
 class NewDeck extends Component {
   state = {
@@ -35,4 +37,4 @@ class NewDeck extends Component {
 
 }
 
-export default NewDeck
+export default connect()(NewDeck)
