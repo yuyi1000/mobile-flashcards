@@ -1,12 +1,16 @@
 import React, { Component } from 'react'
 import { View, Text, Button } from 'react-native'
-import { getDeck } from '../utils/api'
+import { getDeck, deleteDeck } from '../utils/api'
 import { connect } from 'react-redux'
 
 
 class EachDeck extends Component {
 
-  removeDeck = () => {
+  removeDeck = (id) => {
+    const { navigation } = this.props
+    deleteDeck(id)
+
+    navigation.goBack()
 
   }
 
@@ -37,7 +41,7 @@ class EachDeck extends Component {
         />
         <Button
           title='Delete Deck'
-          onPress={() => this.props.navigation.goBack()}
+          onPress={(title) => this.removeDeck(title)}
         />
 
       </View>
