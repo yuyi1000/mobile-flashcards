@@ -6,6 +6,7 @@ import NewDeck from './components/NewDeck'
 import Error from './components/Error'
 import NewQuestion from './components/NewQuestion'
 import Quiz from './components/Quiz'
+import QuizResult from './components/QuizResult'
 import { createBottomTabNavigator, createStackNavigator } from 'react-navigation'
 import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
@@ -30,6 +31,9 @@ const DecksNavigator = createStackNavigator(
     Quiz: {
       screen: Quiz,
     },
+    QuizResult: {
+      screen: QuizResult
+    }
   }
 )
 
