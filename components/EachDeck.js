@@ -43,7 +43,7 @@ class EachDeck extends Component {
         />
         <Button
           title='Delete Deck'
-          onPress={(title) => this.deleteDeckBtn(title)}
+          onPress={() => this.deleteDeckBtn(title)}
         />
 
       </View>

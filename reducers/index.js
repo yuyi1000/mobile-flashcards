@@ -21,8 +21,8 @@ export default function decks (state={}, action) {
       }
     case ADD_NEW_DECK :
       const { newDeckTitle } = action
-      console.log('add new deck.');
-      console.log(action);
+      // console.log('add new deck.');
+      // console.log(action);
       return {
         ...state,
         [newDeckTitle]: {
@@ -32,12 +32,12 @@ export default function decks (state={}, action) {
       }
     case REMOVE_DECK :
       const { id } = action
-      console.log(action);
+      // console.log(action);
       const { [id]: value, ...rest } = state
-      console.log('remove deck');
-      console.log(rest);
+      // console.log('remove deck');
+      // console.log(rest);
       // console.log(value);
-      return state
+      return rest
     default :
       return state
   }
