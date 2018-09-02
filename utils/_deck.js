@@ -41,7 +41,7 @@ let sampleDecks = {
 export function formatDecksResults (result) {
   // console.log('get decks.');
   // console.log(JSON.parse(result));
-  return result === null
+  return result === null || result === '{}'
     ? sampleDecks
     : JSON.parse(result)
 }
