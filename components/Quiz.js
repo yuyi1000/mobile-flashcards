@@ -13,7 +13,12 @@ class Quiz extends Component {
       </View>
     )
   }
-
 }
 
-export default connect()(Quiz)
+function mapStateToProps (decks) {
+  return {
+    decks,
+  }
+}
+
+export default connect(mapStateToProps)(Quiz)
