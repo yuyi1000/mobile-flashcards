@@ -33,7 +33,7 @@ const DecksNavigator = createStackNavigator(
     },
     QuizResult: {
       screen: QuizResult
-    }
+    },
   }
 )
 
