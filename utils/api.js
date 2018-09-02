@@ -23,6 +23,7 @@ export function addCardToDeck (title, card) {
       return AsyncStorage.mergeItem(DECKS_STORAGE_KEY, JSON.stringify({
         [title]: deck
       }))
+        // .then(showDecks)
     })
 }
 
@@ -46,5 +47,6 @@ export function deleteDeck (id) {
       data[id] = undefined
       delete data[id]
       AsyncStorage.setItem(DECKS_STORAGE_KEY, JSON.stringify(data))
+        // .then(showDecks)
     })
 }
