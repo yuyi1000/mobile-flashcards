@@ -16,10 +16,12 @@ class NewDeck extends Component {
     const { dispatch, navigation } = this.props
     saveDeckTitle(title)
     dispatch(addNewDeck(title))
+    this.setState({title: ''})
     navigation.navigate('DeckList')
   }
 
   render() {
+    console.log(this.state);
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
         <Text>
@@ -30,6 +32,7 @@ class NewDeck extends Component {
         </Text>
         <TextInput style={{ margin: 10, borderWidth: 1 }}
           placeholder='Deck Title'
+          value={this.state.title}
           onChangeText={(text) => this.setState({title: text})}
         />
         <Button

@@ -27,14 +27,14 @@ export function addCardToDeck (title, card) {
 }
 
 export function saveDeckTitle (title) {
-  showDecks()
+  // showDecks()
   return AsyncStorage.mergeItem(DECKS_STORAGE_KEY, JSON.stringify({
     [title]: {
       title,
       questions: [],
     }
   }))
-    .then(showDecks)
+    // .then(showDecks)
 }
 
 export function deleteDeck (id) {
