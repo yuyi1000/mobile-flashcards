@@ -15,12 +15,15 @@ class EachDeck extends Component {
 
   }
 
+  shouldComponentUpdate (nextProps) {
+    return nextProps.navigation.state.params.deckTitle in nextProps.decks
+  }
+
   render() {
 
     const { navigation, decks } = this.props
     const deckTitle = navigation.getParam('deckTitle', 'NO-TITLE')
     const deck = decks[deckTitle]
-
     const title = deck.title
     const numberOfCards = deck.questions.length
     // console.log(title);
