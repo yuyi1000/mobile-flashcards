@@ -7,9 +7,10 @@ import Error from './components/Error'
 import NewQuestion from './components/NewQuestion'
 import Quiz from './components/Quiz'
 import { createBottomTabNavigator, createStackNavigator } from 'react-navigation'
-import { createStore } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 import reducer from './reducers'
+import logger from 'redux-logger'
 
 
 const DecksNavigator = createStackNavigator(
@@ -43,7 +44,10 @@ const Tabs = createBottomTabNavigator(
   }
 )
 
-const store = createStore(reducer)
+const store = createStore(
+  reducer,
+  applyMiddleware(logger)
+)
 
 
 export default class App extends React.Component {
