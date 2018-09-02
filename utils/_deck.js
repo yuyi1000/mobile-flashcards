@@ -38,10 +38,15 @@ let sampleDecks = {
   },
 }
 
+function setSampleDecks () {
+  AsyncStorage.setItem(DECKS_STORAGE_KEY, JSON.stringify(sampleDecks))
+  return sampleDecks
+}
+
 export function formatDecksResults (result) {
   // console.log('get decks.');
   // console.log(JSON.parse(result));
   return result === null || result === '{}'
-    ? sampleDecks
+    ? setSampleDecks()
     : JSON.parse(result)
 }

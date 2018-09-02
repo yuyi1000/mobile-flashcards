@@ -6,6 +6,11 @@ export function getDecks () {
     .then(formatDecksResults)
 }
 
+function showDecks () {
+  AsyncStorage.getItem(DECKS_STORAGE_KEY)
+    .then((data) => console.log(JSON.parse(data)))
+}
+
 export function getDeck (id) {
   return getDecks()
     .then((decks) => decks[id])
@@ -22,12 +27,14 @@ export function addCardToDeck (title, card) {
 }
 
 export function saveDeckTitle (title) {
+  showDecks()
   return AsyncStorage.mergeItem(DECKS_STORAGE_KEY, JSON.stringify({
     [title]: {
       title,
       questions: [],
     }
   }))
+    .then(showDecks)
 }
 
 export function deleteDeck (id) {
