@@ -42,7 +42,9 @@ class EachDeck extends Component {
         />
         <Button
           title='Start Quiz'
-          onPress={() => this.props.navigation.navigate('Quiz')}
+          onPress={() => this.props.navigation.navigate('Quiz', {
+            deck,
+          })}
         />
         <Button
           title='Delete Deck'

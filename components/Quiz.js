@@ -4,6 +4,17 @@ import { connect } from 'react-redux'
 
 
 class Quiz extends Component {
+
+  state = {
+    answeredQuestions: 0,
+    deck: {}
+  }
+
+  componentDidMount() {
+    const deck = this.props.navigation.getParam('deck', {})
+    this.setState({deck})
+  }
+
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
