@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, Button, TextInput } from 'react-native'
+import { View, Text, Button, TextInput, TouchableOpacity } from 'react-native'
 import { connect } from 'react-redux'
 import { saveDeckTitle } from '../utils/api'
 import { addNewDeck } from '../actions'
@@ -40,10 +40,32 @@ class NewDeck extends Component {
           value={this.state.title}
           onChangeText={(text) => this.setState({title: text})}
         />
-        <Button
-          title='Create Deck'
+
+        <TouchableOpacity
+          style={{
+            marginRight:40,
+            marginLeft:40,
+            marginTop:10,
+            paddingTop:10,
+            paddingBottom:10,
+            backgroundColor:'#1E6738',
+            borderRadius:10,
+            borderWidth: 1,
+            borderColor: '#fff'
+          }}
           onPress={this.submit}
-        />
+          >
+          <Text style={{
+            color:'#fff',
+            textAlign:'center',
+            paddingLeft : 10,
+            paddingRight : 10
+          }}
+          >
+            Create Deck
+          </Text>
+        </TouchableOpacity>
+
 
       </View>
 
