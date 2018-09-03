@@ -35,7 +35,7 @@ class NewDeck extends Component {
         <Text>
           What is the title of your new deck?
         </Text>
-        <TextInput style={{ margin: 10, borderWidth: 1 }}
+        <TextInput style={{ margin: 10, borderWidth: 1, backgroundColor: 'white', width: 300, height: 30, }}
           placeholder='Deck Title'
           value={this.state.title}
           onChangeText={(text) => this.setState({title: text})}
