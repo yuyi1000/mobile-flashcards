@@ -70,6 +70,7 @@ class Quiz extends Component {
 
   render() {
     const { showQuestion, deck, answeredQuestions, ready, totalQuestions } = this.state
+    const remainingQuestions = totalQuestions - answeredQuestions
     if (!ready) {
       return (
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
@@ -95,10 +96,14 @@ class Quiz extends Component {
     if (showQuestion) {
       const questionIndex = answeredQuestions === totalQuestions ? answeredQuestions - 1 : answeredQuestions
       const questionText = deck.questions[questionIndex].question
+
       return (
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
           <Text>
             This is Quiz View.
+          </Text>
+          <Text>
+            {remainingQuestions}/{totalQuestions}
           </Text>
           <Text>
             {questionText}
@@ -119,6 +124,9 @@ class Quiz extends Component {
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
         <Text>
           This is Quiz View.
+        </Text>
+        <Text>
+          {remainingQuestions}/{totalQuestions}
         </Text>
         <Text>
           {answerText}
