@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, Button } from 'react-native'
 
 class QuizResult extends Component {
   render() {
@@ -14,7 +14,12 @@ class QuizResult extends Component {
         <Text>
           You got {correctedQuestions} out of {answeredQuestions} questions answered correctly.
         </Text>
+        <Button
+          title='Start again'
+          onPress={() => this.props.navigation.goBack()}
+        />
       </View>
+
     )
   }
 
