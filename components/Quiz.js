@@ -4,7 +4,9 @@ import { connect } from 'react-redux'
 
 class Quiz extends Component {
 
-
+  static navigationOptions = {
+    title: 'Quiz',
+  }
 
   state = {
     ready: false,
