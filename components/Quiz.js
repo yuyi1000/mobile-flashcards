@@ -8,6 +8,7 @@ class Quiz extends Component {
   state = {
     ready: false,
     answeredQuestions: 0,
+    correctedQuestions: 0,
     showQuestion: true,
     deck: {}
   }
@@ -67,6 +68,20 @@ class Quiz extends Component {
         <Text>
           {answerText}
         </Text>
+        <Button
+          title='Correct'
+          onPress={() => this.setState((prevState) => ({
+            correctedQuestions: prevState.correctedQuestions + 1,
+            showQuestion: true,
+          }))}
+        />
+        <Button
+          title='Incorrect'
+          onPress={() => this.setState(() => ({
+            showQuestion: true,
+          }))}
+        />
+
       </View>
     )
   }
