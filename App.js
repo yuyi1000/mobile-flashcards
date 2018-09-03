@@ -11,6 +11,7 @@ import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 import reducer from './reducers'
 import logger from 'redux-logger'
+import { setLocalNotification } from './utils/helper'
 
 
 const DecksNavigator = createStackNavigator(
@@ -51,6 +52,9 @@ const store = createStore(
 
 
 export default class App extends React.Component {
+  componentDidMount() {
+    setLocalNotification()
+  }
   render() {
     return (
       <Provider store={store}>
