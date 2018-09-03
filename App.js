@@ -12,6 +12,8 @@ import { Provider } from 'react-redux'
 import reducer from './reducers'
 import logger from 'redux-logger'
 import { setLocalNotification } from './utils/helper'
+import { FontAwesome, Ionicons } from '@expo/vector-icons'
+
 
 
 const DecksNavigator = createStackNavigator(
@@ -38,6 +40,10 @@ const Tabs = createBottomTabNavigator(
   {
     Decks: {
       screen: DecksNavigator,
+      navigationOptions: {
+        tabBarLabel: 'Decks',
+        tabBarIcon: ({ tintColor }) => <Ionicons name='ios-card-outline' size={30} color={tintColor} />
+      }
     },
     AddDeck: {
       screen: NewDeck,
