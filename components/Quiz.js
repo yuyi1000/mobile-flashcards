@@ -39,6 +39,19 @@ class Quiz extends Component {
     }))
   }
 
+  incorrectBtn = () => {
+    const { answeredQuestions, deck, correctedQuestions } = this.state
+    const { navigation } = this.props
+    if (answeredQuestions === deck.questions.length) {
+      navigation.navigate('QuizResult', {
+        correctedQuestions,
+        answeredQuestions,
+      })
+    }
+    this.setState((prevState) => ({
+      showQuestion: true,
+    }))
+  }
 
 
 
@@ -93,9 +106,7 @@ class Quiz extends Component {
         />
         <Button
           title='Incorrect'
-          onPress={() => this.setState(() => ({
-            showQuestion: true,
-          }))}
+          onPress={this.incorrectBtn}
         />
 
       </View>
