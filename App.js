@@ -47,6 +47,10 @@ const Tabs = createBottomTabNavigator(
     },
     AddDeck: {
       screen: NewDeck,
+      navigationOptions: {
+        tabBarLabel: 'Add Deck',
+        tabBarIcon: ({ tintColor }) => <Ionicons name='ios-add-circle-outline' size={30} color={tintColor} />
+      }
     },
   }
 )
