@@ -22,6 +22,18 @@ class Quiz extends Component {
     })
   }
 
+  correctBtn = () => {
+    const { answeredQuestions, deck, correctedQuestions } = this.state
+    const { navigation } = this.props
+    if (answeredQuestions === deck.questions.length) {
+      navigation.navigate('QuizResult', {
+        correctedQuestions: correctedQuestions + 1,
+        answeredQuestions,
+      })
+    }
+  }
+
+
 
 
   render() {
@@ -70,10 +82,7 @@ class Quiz extends Component {
         </Text>
         <Button
           title='Correct'
-          onPress={() => this.setState((prevState) => ({
-            correctedQuestions: prevState.correctedQuestions + 1,
-            showQuestion: true,
-          }))}
+          onPress={this.correctBtn}
         />
         <Button
           title='Incorrect'
