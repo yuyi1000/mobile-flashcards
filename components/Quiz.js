@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, Button } from 'react-native'
 import { connect } from 'react-redux'
 
 
@@ -20,6 +20,8 @@ class Quiz extends Component {
       ready: true,
     })
   }
+
+
 
   render() {
     const { showQuestion, deck, answeredQuestions, ready } = this.state
@@ -44,16 +46,26 @@ class Quiz extends Component {
           <Text>
             {questionText}
           </Text>
-
+          <Button
+            title='Answer'
+            onPress={() => this.setState((prevState) => ({
+              answeredQuestions: prevState.answeredQuestions + 1,
+              showQuestion: false,
+            }))}
+          />
 
         </View>
       )
     }
 
+    const answerText = deck.questions[answeredQuestions].answer
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
         <Text>
           This is Quiz View.
+        </Text>
+        <Text>
+          {answerText}
         </Text>
       </View>
     )
