@@ -3,6 +3,7 @@ import { View, Text, Button } from 'react-native'
 import { getDeck, deleteDeck } from '../utils/api'
 import { connect } from 'react-redux'
 import { removeDeck } from '../actions'
+import { clearLocalNotification, setLocalNotification } from '../utils/helper'
 
 
 class EachDeck extends Component {
@@ -17,6 +18,15 @@ class EachDeck extends Component {
 
   shouldComponentUpdate (nextProps) {
     return nextProps.navigation.state.params.deckTitle in nextProps.decks
+  }
+
+  startQuizBtn = (deck) => {
+    clearLocalNotification()
+      .then(setLocalNotification)
+
+    this.props.navigation.navigate('Quiz', {
+      deck,
+    })
   }
 
   render() {
@@ -42,9 +52,7 @@ class EachDeck extends Component {
         />
         <Button
           title='Start Quiz'
-          onPress={() => this.props.navigation.navigate('Quiz', {
-            deck,
-          })}
+          onPress={() => this.startQuizBtn(deck)}
         />
         <Button
           title='Delete Deck'
