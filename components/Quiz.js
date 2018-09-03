@@ -26,10 +26,10 @@ class Quiz extends Component {
   correctBtn = () => {
     const { answeredQuestions, deck, correctedQuestions } = this.state
     const { navigation } = this.props
-    if (answeredQuestions === deck.questions.length) {
+    if (answeredQuestions + 1 === deck.questions.length) {
       navigation.navigate('QuizResult', {
         correctedQuestions: correctedQuestions + 1,
-        answeredQuestions,
+        answeredQuestions: answeredQuestions + 1,
       })
       this.setState({
         answeredQuestions: 0,
@@ -40,6 +40,7 @@ class Quiz extends Component {
     else {
       this.setState((prevState) => ({
         correctedQuestions: prevState.correctedQuestions + 1,
+        answeredQuestions: prevState.answeredQuestions + 1,
         showQuestion: true,
       }))
     }
@@ -48,10 +49,10 @@ class Quiz extends Component {
   incorrectBtn = () => {
     const { answeredQuestions, deck, correctedQuestions } = this.state
     const { navigation } = this.props
-    if (answeredQuestions === deck.questions.length) {
+    if (answeredQuestions + 1 === deck.questions.length) {
       navigation.navigate('QuizResult', {
         correctedQuestions,
-        answeredQuestions,
+        answeredQuestions: answeredQuestions + 1,
       })
       this.setState({
         answeredQuestions: 0,
@@ -61,6 +62,7 @@ class Quiz extends Component {
     }
     else {
       this.setState((prevState) => ({
+        answeredQuestions: prevState.answeredQuestions + 1,
         showQuestion: true,
       }))
     }
@@ -104,7 +106,6 @@ class Quiz extends Component {
           <Button
             title='Answer'
             onPress={() => this.setState((prevState) => ({
-              answeredQuestions: prevState.answeredQuestions + 1,
               showQuestion: false,
             }))}
           />
@@ -113,7 +114,7 @@ class Quiz extends Component {
       )
     }
 
-    const answerText = deck.questions[answeredQuestions - 1].answer
+    const answerText = deck.questions[answeredQuestions].answer
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
         <Text>
