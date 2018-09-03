@@ -58,7 +58,7 @@ class Quiz extends Component {
         answeredQuestions: 0,
         correctedQuestions: 0,
         showQuestion: true,
-      })      
+      })
     }
     else {
       this.setState((prevState) => ({
@@ -66,8 +66,6 @@ class Quiz extends Component {
       }))
     }
   }
-
-
 
   render() {
     const { showQuestion, deck, answeredQuestions, ready, totalQuestions } = this.state
@@ -82,6 +80,17 @@ class Quiz extends Component {
     }
     // console.log(deck);
     // console.log(this.state);
+
+    if (totalQuestions === 0) {
+      return (
+        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+          <Text>
+            Sorry, you cannot take a quiz because there are no cards in the deck.
+          </Text>
+        </View>
+      )
+    }
+
     if (showQuestion) {
       const questionIndex = answeredQuestions === totalQuestions ? answeredQuestions - 1 : answeredQuestions
       const questionText = deck.questions[questionIndex].question
