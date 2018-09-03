@@ -31,6 +31,10 @@ class Quiz extends Component {
         answeredQuestions,
       })
     }
+    this.setState((prevState) => ({
+      correctedQuestions: prevState.correctedQuestions + 1,
+      showQuestion: true,
+    }))
   }
 
 
@@ -71,7 +75,7 @@ class Quiz extends Component {
       )
     }
 
-    const answerText = deck.questions[answeredQuestions].answer
+    const answerText = deck.questions[answeredQuestions - 1].answer
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
         <Text>
