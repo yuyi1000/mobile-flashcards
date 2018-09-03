@@ -123,6 +123,10 @@ class Quiz extends Component {
           {answerText}
         </Text>
         <Button
+          title='Question'
+          onPress={() => this.setState({showQuestion: true})}
+        />
+        <Button
           title='Correct'
           onPress={this.correctBtn}
         />
