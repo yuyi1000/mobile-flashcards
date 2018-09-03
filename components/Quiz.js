@@ -32,11 +32,18 @@ class Quiz extends Component {
         correctedQuestions: correctedQuestions + 1,
         answeredQuestions,
       })
+      this.setState({
+        answeredQuestions: 0,
+        correctedQuestions: 0,
+        showQuestion: true,
+      })
     }
-    this.setState((prevState) => ({
-      correctedQuestions: prevState.correctedQuestions + 1,
-      showQuestion: true,
-    }))
+    else {
+      this.setState((prevState) => ({
+        correctedQuestions: prevState.correctedQuestions + 1,
+        showQuestion: true,
+      }))
+    }
   }
 
   incorrectBtn = () => {
@@ -47,10 +54,17 @@ class Quiz extends Component {
         correctedQuestions,
         answeredQuestions,
       })
+      this.setState({
+        answeredQuestions: 0,
+        correctedQuestions: 0,
+        showQuestion: true,
+      })      
     }
-    this.setState((prevState) => ({
-      showQuestion: true,
-    }))
+    else {
+      this.setState((prevState) => ({
+        showQuestion: true,
+      }))
+    }
   }
 
 
