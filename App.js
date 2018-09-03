@@ -36,6 +36,14 @@ const DecksNavigator = createStackNavigator(
   }
 )
 
+const AddDeckNavigator = createStackNavigator(
+  {
+    AddDeck: {
+      screen: NewDeck,
+    },
+  }
+)
+
 const Tabs = createBottomTabNavigator(
   {
     Decks: {
@@ -46,7 +54,7 @@ const Tabs = createBottomTabNavigator(
       }
     },
     AddDeck: {
-      screen: NewDeck,
+      screen: AddDeckNavigator,
       navigationOptions: {
         tabBarLabel: 'Add Deck',
         tabBarIcon: ({ tintColor }) => <Ionicons name='ios-add-circle-outline' size={30} color={tintColor} />
