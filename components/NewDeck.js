@@ -15,6 +15,10 @@ class NewDeck extends Component {
     // console.log('new deck submitted!');
     const { title } = this.state
     const { dispatch, navigation } = this.props
+    if (title === '') {
+      alert('Please input a title for a new deck.')
+      return
+    }
     saveDeckTitle(title)
     dispatch(addNewDeck(title))
     this.setState({title: ''})
