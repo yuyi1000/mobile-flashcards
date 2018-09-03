@@ -8,8 +8,8 @@ class Quiz extends Component {
   state = {
     ready: false,
     answeredQuestions: 0,
-    maxAnsweredQuestions: 0,
     correctedQuestions: 0,
+    totalQuestions: 0,
     showQuestion: true,
     deck: {}
   }
@@ -20,7 +20,7 @@ class Quiz extends Component {
     this.setState({
       deck,
       ready: true,
-      maxAnsweredQuestions: deck.questions.length,
+      totalQuestions: deck.questions.length
     })
   }
 
@@ -43,7 +43,7 @@ class Quiz extends Component {
 
 
   render() {
-    const { showQuestion, deck, answeredQuestions, ready } = this.state
+    const { showQuestion, deck, answeredQuestions, ready, totalQuestions } = this.state
     if (!ready) {
       return (
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
@@ -56,7 +56,8 @@ class Quiz extends Component {
     // console.log(deck);
     // console.log(this.state);
     if (showQuestion) {
-      const questionText = deck.questions[answeredQuestions].question
+      const questionIndex = answeredQuestions === totalQuestions ? answeredQuestions - 1 : answeredQuestions
+      const questionText = deck.questions[questionIndex].question
       return (
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
           <Text>
