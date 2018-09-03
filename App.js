@@ -3,7 +3,6 @@ import { StyleSheet, Text, View } from 'react-native'
 import DeckList from './components/DeckList'
 import EachDeck from './components/EachDeck'
 import NewDeck from './components/NewDeck'
-import Error from './components/Error'
 import NewQuestion from './components/NewQuestion'
 import Quiz from './components/Quiz'
 import QuizResult from './components/QuizResult'
@@ -24,9 +23,6 @@ const DecksNavigator = createStackNavigator(
     },
     NewQuestion: {
       screen: NewQuestion,
-    },
-    Error: {
-      screen: Error,
     },
     Quiz: {
       screen: Quiz,
