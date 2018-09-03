@@ -4,6 +4,8 @@ import { connect } from 'react-redux'
 
 class Quiz extends Component {
 
+
+
   state = {
     ready: false,
     answeredQuestions: 0,

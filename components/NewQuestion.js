@@ -6,6 +6,11 @@ import { addNewQuestion } from '../actions'
 
 
 class NewQuestion extends Component {
+
+  static navigationOptions = {
+    title: 'Add Card',
+  }
+
   state = {
     question: '',
     answer: '',
