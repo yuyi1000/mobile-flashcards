@@ -8,6 +8,7 @@ class Quiz extends Component {
   state = {
     ready: false,
     answeredQuestions: 0,
+    maxAnsweredQuestions: 0,
     correctedQuestions: 0,
     showQuestion: true,
     deck: {}
@@ -19,6 +20,7 @@ class Quiz extends Component {
     this.setState({
       deck,
       ready: true,
+      maxAnsweredQuestions: deck.questions.length,
     })
   }
 
