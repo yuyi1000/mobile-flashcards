@@ -8,6 +8,12 @@ import { clearLocalNotification, setLocalNotification } from '../utils/helper'
 
 class EachDeck extends Component {
 
+  static navigationOptions = ({ navigation }) => {
+    return {
+      title: navigation.getParam('deckTitle', 'undefined'),
+    }
+  }
+
   deleteDeckBtn = (id) => {
     const { navigation, dispatch } = this.props
     deleteDeck(id)

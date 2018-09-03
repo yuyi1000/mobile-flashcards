@@ -6,6 +6,7 @@ import { addNewDeck } from '../actions'
 
 
 class NewDeck extends Component {
+
   state = {
     title: '',
   }
