@@ -18,6 +18,10 @@ class QuizResult extends Component {
           title='Start again'
           onPress={() => this.props.navigation.goBack()}
         />
+        <Button
+          title='Check another deck'
+          onPress={() => this.props.navigation.navigate('DeckList')}
+        />
       </View>
 
     )
