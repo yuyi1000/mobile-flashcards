@@ -34,13 +34,8 @@ class DeckList extends Component {
     // console.log(decks);
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>
-          This is DeckList View.
-          {/* {decks} */}
-        </Text>
 
         {Object.keys(decks).map((key) => {
-
           const title = decks[key].title
           const numberOfCards = decks[key].questions.length
           const displayInfo = title + '\n' + numberOfCards + (numberOfCards === 1 ? ' card' : ' cards')
