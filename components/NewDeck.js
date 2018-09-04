@@ -22,7 +22,9 @@ class NewDeck extends Component {
     saveDeckTitle(title)
     dispatch(addNewDeck(title))
     this.setState({title: ''})
-    navigation.navigate('DeckList')
+    navigation.navigate('EachDeck', {
+      deckTitle: title,
+    })
   }
 
   render() {
