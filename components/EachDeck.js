@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, Button } from 'react-native'
+import { View, Text, Button, TouchableOpacity } from 'react-native'
 import { getDeck, deleteDeck } from '../utils/api'
 import { connect } from 'react-redux'
 import { removeDeck } from '../actions'
@@ -54,6 +54,35 @@ class EachDeck extends Component {
             deckTitle: title,
           })}
         />
+
+        <TouchableOpacity
+          style={{
+            width: 200,
+            marginRight:40,
+            marginLeft:40,
+            marginTop:10,
+            paddingTop:10,
+            paddingBottom:10,
+            backgroundColor:'#1E6738',
+            borderRadius:10,
+            borderWidth: 1,
+            borderColor: '#fff'
+          }}
+          onPress={() => this.props.navigation.navigate('NewQuestion', {
+            deckTitle: title,
+          })}
+          >
+          <Text style={{
+            color:'#fff',
+            textAlign:'center',
+            paddingLeft : 10,
+            paddingRight : 10
+          }}
+          >
+            Add Card
+          </Text>
+        </TouchableOpacity>
+
         <Button
           title='Start Quiz'
           onPress={() => this.startQuizBtn(deck)}
