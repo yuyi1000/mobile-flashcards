@@ -87,6 +87,33 @@ class EachDeck extends Component {
           title='Start Quiz'
           onPress={() => this.startQuizBtn(deck)}
         />
+
+        <TouchableOpacity
+          style={{
+            width: 200,
+            marginRight:40,
+            marginLeft:40,
+            marginTop:10,
+            paddingTop:10,
+            paddingBottom:10,
+            backgroundColor:'#1E6738',
+            borderRadius:10,
+            borderWidth: 1,
+            borderColor: '#fff'
+          }}
+          onPress={() => this.startQuizBtn(deck)}
+          >
+          <Text style={{
+            color:'#fff',
+            textAlign:'center',
+            paddingLeft : 10,
+            paddingRight : 10
+          }}
+          >
+            Start Quiz
+          </Text>
+        </TouchableOpacity>
+
         <Button
           title='Delete Deck'
           onPress={() => this.deleteDeckBtn(title)}
