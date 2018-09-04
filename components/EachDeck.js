@@ -4,7 +4,7 @@ import { getDeck, deleteDeck } from '../utils/api'
 import { connect } from 'react-redux'
 import { removeDeck } from '../actions'
 import { clearLocalNotification, setLocalNotification } from '../utils/helper'
-
+import TextButton from './TextButton'
 
 class EachDeck extends Component {
 
@@ -49,85 +49,23 @@ class EachDeck extends Component {
         <Text style={styles.titleText}>{title}</Text>
         <Text style={styles.numberText}>{displayNumber}</Text>
 
-        <TouchableOpacity
-          style={{
-            width: 200,
-            marginRight:40,
-            marginLeft:40,
-            marginTop:10,
-            paddingTop:10,
-            paddingBottom:10,
-            backgroundColor:'#1E6738',
-            borderRadius:10,
-            borderWidth: 1,
-            borderColor: '#fff'
-          }}
-          onPress={() => this.props.navigation.navigate('NewQuestion', {
-            deckTitle: title,
-          })}
-          >
-          <Text style={{
-            color:'#fff',
-            textAlign:'center',
-            paddingLeft : 10,
-            paddingRight : 10
-          }}
-          >
-            Add Card
-          </Text>
-        </TouchableOpacity>
+        <TextButton onPress={() => this.props.navigation.navigate('NewQuestion', {
+          deckTitle: title,
+        })}>
+          Add Card
+        </TextButton>
 
-        <TouchableOpacity
-          style={{
-            width: 200,
-            marginRight:40,
-            marginLeft:40,
-            marginTop:10,
-            paddingTop:10,
-            paddingBottom:10,
-            backgroundColor:'#1E6738',
-            borderRadius:10,
-            borderWidth: 1,
-            borderColor: '#fff'
-          }}
-          onPress={() => this.startQuizBtn(deck)}
-          >
-          <Text style={{
-            color:'#fff',
-            textAlign:'center',
-            paddingLeft : 10,
-            paddingRight : 10
-          }}
-          >
-            Start Quiz
-          </Text>
-        </TouchableOpacity>
+        <TextButton onPress={() => this.startQuizBtn(deck)}>
+          Start Quiz
+        </TextButton>
 
-        <TouchableOpacity
-          style={{
-            width: 200,
-            marginRight:40,
-            marginLeft:40,
-            marginTop:10,
-            paddingTop:10,
-            paddingBottom:10,
-            backgroundColor:'white',
-            borderRadius:10,
-            borderWidth: 1,
-            borderColor: '#fff'
-          }}
+        <TextButton
           onPress={() => this.deleteDeckBtn(title)}
+          buttonStyle={{backgroundColor: '#fff'}}
+          textStyle={{color: '#FF0000'}}
           >
-          <Text style={{
-            color:'red',
-            textAlign:'center',
-            paddingLeft : 10,
-            paddingRight : 10
-          }}
-          >
-            Delete Deck
-          </Text>
-        </TouchableOpacity>
+          Delete Deck
+        </TextButton>
 
       </View>
     )
