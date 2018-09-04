@@ -11,4 +11,4 @@ run `npm install`
 
 ## How to run
 
-run `npm start` and then either open iPhone simulator on laptop or physical iPhone device with [Expo](https://expo.io/).  
+run `npm start` and then either open iOS simulator on laptop or physical iPhone device with [Expo](https://expo.io/).  
