@@ -111,7 +111,7 @@ class EachDeck extends Component {
             marginTop:10,
             paddingTop:10,
             paddingBottom:10,
-            backgroundColor:'#1E6738',
+            backgroundColor:'white',
             borderRadius:10,
             borderWidth: 1,
             borderColor: '#fff'
@@ -119,7 +119,7 @@ class EachDeck extends Component {
           onPress={() => this.deleteDeckBtn(title)}
           >
           <Text style={{
-            color:'#fff',
+            color:'red',
             textAlign:'center',
             paddingLeft : 10,
             paddingRight : 10
