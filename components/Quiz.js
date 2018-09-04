@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, Button } from 'react-native'
+import { View, Text, Button, TouchableOpacity } from 'react-native'
 import { connect } from 'react-redux'
 
 class Quiz extends Component {
@@ -133,14 +133,60 @@ class Quiz extends Component {
           title='Question'
           onPress={() => this.setState({showQuestion: true})}
         />
-        <Button
-          title='Correct'
+
+        <TouchableOpacity
+          style={{
+            width: 200,
+            marginRight:40,
+            marginLeft:40,
+            marginTop:10,
+            paddingTop:10,
+            paddingBottom:10,
+            backgroundColor:'#1E6738',
+            borderRadius:10,
+            borderWidth: 1,
+            borderColor: '#fff'
+          }}
           onPress={this.correctBtn}
-        />
-        <Button
-          title='Incorrect'
+          >
+          <Text style={{
+            color:'#fff',
+            textAlign:'center',
+            paddingLeft : 10,
+            paddingRight : 10
+          }}
+          >
+            Correct
+          </Text>
+        </TouchableOpacity>
+
+
+        <TouchableOpacity
+          style={{
+            width: 200,
+            marginRight:40,
+            marginLeft:40,
+            marginTop:10,
+            paddingTop:10,
+            paddingBottom:10,
+            backgroundColor:'#dc143c',
+            borderRadius:10,
+            borderWidth: 1,
+            borderColor: '#fff'
+          }}
           onPress={this.incorrectBtn}
-        />
+          >
+          <Text style={{
+            color:'#fff',
+            textAlign:'center',
+            paddingLeft : 10,
+            paddingRight : 10
+          }}
+          >
+            Incorrect
+          </Text>
+        </TouchableOpacity>
+
 
       </View>
     )
