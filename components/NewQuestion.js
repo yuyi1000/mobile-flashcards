@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, TextInput, Button, TouchableOpacity } from 'react-native'
+import { View, Text, TextInput, Button, TouchableOpacity, StyleSheet } from 'react-native'
 import { addCardToDeck } from '../utils/api'
 import { connect } from 'react-redux'
 import { addNewQuestion } from '../actions'
@@ -43,13 +43,13 @@ class NewQuestion extends Component {
 
   render() {
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <TextInput style={{ margin: 10, borderWidth: 1, backgroundColor: 'white', width: 300, height: 30, }}
+      <View style={styles.container}>
+        <TextInput style={styles.textInput}
           placeholder='Question'
           onChangeText={(text) => this.setState({question: text})}
         />
         <TextInput
-          style={{ margin: 10, borderWidth: 1, backgroundColor: 'white', width: 300, height: 30, }}
+          style={styles.textInput}
           placeholder='Answer'
           onChangeText={(text) => this.setState({answer: text})}
         />
@@ -80,11 +80,25 @@ class NewQuestion extends Component {
           </Text>
         </TouchableOpacity>
 
-
       </View>
     )
   }
-
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  textInput: {
+    margin: 10,
+    borderWidth: 1,
+    backgroundColor: 'white',
+    width: 300,
+    height: 30,
+  },
+})
+
 
 export default connect()(NewQuestion)
