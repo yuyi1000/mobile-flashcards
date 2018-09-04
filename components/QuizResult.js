@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, Button, TouchableOpacity } from 'react-native'
+import { View, Text, Button, TouchableOpacity, StyleSheet } from 'react-native'
 
 class QuizResult extends Component {
   render() {
@@ -7,8 +7,8 @@ class QuizResult extends Component {
     const { correctedQuestions, answeredQuestions } = this.props.navigation.state.params
 
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text style={{ fontSize: 20, padding: 20, }}>
+      <View style={styles.container}>
+        <Text style={styles.text}>
           You got {correctedQuestions} out of {answeredQuestions} questions answered correctly.
         </Text>
 
@@ -65,13 +65,21 @@ class QuizResult extends Component {
           </Text>
         </TouchableOpacity>
 
-
-
       </View>
-
     )
   }
-
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  text: {
+    fontSize: 20,
+    padding: 20,
+  },
+})
 
 export default QuizResult
