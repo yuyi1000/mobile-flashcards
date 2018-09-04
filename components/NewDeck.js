@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, Button, TextInput, TouchableOpacity } from 'react-native'
+import { View, Text, Button, TextInput, TouchableOpacity, StyleSheet } from 'react-native'
 import { connect } from 'react-redux'
 import { saveDeckTitle } from '../utils/api'
 import { addNewDeck } from '../actions'
@@ -28,11 +28,11 @@ class NewDeck extends Component {
   render() {
     // console.log(this.state);
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text style={{ fontSize: 20,  }}>
+      <View style={styles.container}>
+        <Text style={styles.text}>
           What is the title of your new deck?
         </Text>
-        <TextInput style={{ margin: 10, borderWidth: 1, backgroundColor: 'white', width: 300, height: 30, }}
+        <TextInput style={styles.textInput}
           placeholder='Deck Title'
           value={this.state.title}
           onChangeText={(text) => this.setState({title: text})}
@@ -63,12 +63,27 @@ class NewDeck extends Component {
           </Text>
         </TouchableOpacity>
 
-
       </View>
-
     )
   }
-
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  text: {
+    fontSize: 20,
+  },
+  textInput: {
+    margin: 10,
+    borderWidth: 1,
+    backgroundColor: 'white',
+    width: 300,
+    height: 30
+  },
+})
 
 export default connect()(NewDeck)

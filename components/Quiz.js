@@ -90,7 +90,7 @@ class Quiz extends Component {
     if (totalQuestions === 0) {
       return (
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-          <Text>
+          <Text style={{ fontSize: 25, padding: 20 }}>
             Sorry, you cannot take a quiz because there are no cards in the deck.
           </Text>
         </View>
