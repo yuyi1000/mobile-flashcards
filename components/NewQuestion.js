@@ -3,7 +3,7 @@ import { View, Text, TextInput, Button, TouchableOpacity, StyleSheet } from 'rea
 import { addCardToDeck } from '../utils/api'
 import { connect } from 'react-redux'
 import { addNewQuestion } from '../actions'
-
+import TextButton from './TextButton'
 
 class NewQuestion extends Component {
 
@@ -54,31 +54,9 @@ class NewQuestion extends Component {
           onChangeText={(text) => this.setState({answer: text})}
         />
 
-        <TouchableOpacity
-          style={{
-            width: 200,
-            marginRight:40,
-            marginLeft:40,
-            marginTop:50,
-            paddingTop:10,
-            paddingBottom:10,
-            backgroundColor:'#1E6738',
-            borderRadius:10,
-            borderWidth: 1,
-            borderColor: '#fff'
-          }}
-          onPress={this.submit}
-          >
-          <Text style={{
-            color:'#fff',
-            textAlign:'center',
-            paddingLeft : 10,
-            paddingRight : 10
-          }}
-          >
-            Submit
-          </Text>
-        </TouchableOpacity>
+        <TextButton onPress={this.submit}>
+          Submit
+        </TextButton>
 
       </View>
     )
