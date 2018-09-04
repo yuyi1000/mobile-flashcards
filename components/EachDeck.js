@@ -45,9 +45,6 @@ class EachDeck extends Component {
     // console.log(title);
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>
-          This is EachDeck View.
-        </Text>
         <Text>{title}</Text>
         <Text>{numberOfCards}</Text>
         <Button
