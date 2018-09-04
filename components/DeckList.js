@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, Button } from 'react-native'
+import { View, Text, Button, StyleSheet } from 'react-native'
 import { getDecks } from '../utils/api'
 import { connect } from 'react-redux'
 import { receiveDecks } from '../actions'
@@ -22,7 +22,7 @@ class DeckList extends Component {
     const { ready } = this.state
     if (!ready) {
       return (
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <View style={styles.container}>
           <Text>
             Still loading.
           </Text>
@@ -33,7 +33,7 @@ class DeckList extends Component {
     const { decks } = this.props
     // console.log(decks);
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <View style={styles.container}>
 
         {Object.keys(decks).map((key) => {
           const title = decks[key].title
@@ -52,6 +52,14 @@ class DeckList extends Component {
     )
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+})
 
 function mapStateToProps(decks) {
   return {
