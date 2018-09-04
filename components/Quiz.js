@@ -169,7 +169,7 @@ class Quiz extends Component {
             marginTop:10,
             paddingTop:10,
             paddingBottom:10,
-            backgroundColor:'#dc143c',
+            backgroundColor:'#DC143C',
             borderRadius:10,
             borderWidth: 1,
             borderColor: '#fff'
