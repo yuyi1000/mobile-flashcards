@@ -48,12 +48,6 @@ class EachDeck extends Component {
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
         <Text style={{ fontSize: 20 }}>{title}</Text>
         <Text>{displayNumber}</Text>
-        <Button
-          title='Add Card'
-          onPress={() => this.props.navigation.navigate('NewQuestion', {
-            deckTitle: title,
-          })}
-        />
 
         <TouchableOpacity
           style={{
@@ -83,11 +77,6 @@ class EachDeck extends Component {
           </Text>
         </TouchableOpacity>
 
-        <Button
-          title='Start Quiz'
-          onPress={() => this.startQuizBtn(deck)}
-        />
-
         <TouchableOpacity
           style={{
             width: 200,
@@ -113,11 +102,6 @@ class EachDeck extends Component {
             Start Quiz
           </Text>
         </TouchableOpacity>
-
-        <Button
-          title='Delete Deck'
-          onPress={() => this.deleteDeckBtn(title)}
-        />
 
         <TouchableOpacity
           style={{
