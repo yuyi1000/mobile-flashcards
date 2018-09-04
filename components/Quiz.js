@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { View, Text, Button, TouchableOpacity, StyleSheet } from 'react-native'
 import { connect } from 'react-redux'
+import TextButton from './TextButton'
 
 class Quiz extends Component {
 
@@ -134,59 +135,13 @@ class Quiz extends Component {
           onPress={() => this.setState({showQuestion: true})}
         />
 
-        <TouchableOpacity
-          style={{
-            width: 200,
-            marginRight:40,
-            marginLeft:40,
-            marginTop:10,
-            paddingTop:10,
-            paddingBottom:10,
-            backgroundColor:'#1E6738',
-            borderRadius:10,
-            borderWidth: 1,
-            borderColor: '#fff'
-          }}
-          onPress={this.correctBtn}
-          >
-          <Text style={{
-            color:'#fff',
-            textAlign:'center',
-            paddingLeft : 10,
-            paddingRight : 10
-          }}
-          >
-            Correct
-          </Text>
-        </TouchableOpacity>
+        <TextButton onPress={this.correctBtn}>
+          Correct
+        </TextButton>
 
-
-        <TouchableOpacity
-          style={{
-            width: 200,
-            marginRight:40,
-            marginLeft:40,
-            marginTop:10,
-            paddingTop:10,
-            paddingBottom:10,
-            backgroundColor:'#DC143C',
-            borderRadius:10,
-            borderWidth: 1,
-            borderColor: '#fff'
-          }}
-          onPress={this.incorrectBtn}
-          >
-          <Text style={{
-            color:'#fff',
-            textAlign:'center',
-            paddingLeft : 10,
-            paddingRight : 10
-          }}
-          >
-            Incorrect
-          </Text>
-        </TouchableOpacity>
-
+        <TextButton onPress={this.incorrectBtn} buttonStyle={{backgroundColor: '#DC143C'}}>
+          Incorrect
+        </TextButton>
 
       </View>
     )
