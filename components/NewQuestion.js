@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, TextInput, Button } from 'react-native'
+import { View, Text, TextInput, Button, TouchableOpacity } from 'react-native'
 import { addCardToDeck } from '../utils/api'
 import { connect } from 'react-redux'
 import { addNewQuestion } from '../actions'
@@ -48,15 +48,39 @@ class NewQuestion extends Component {
           placeholder='Question'
           onChangeText={(text) => this.setState({question: text})}
         />
-        <TextInput 
+        <TextInput
           style={{ margin: 10, borderWidth: 1, backgroundColor: 'white', width: 300, height: 30, }}
           placeholder='Answer'
           onChangeText={(text) => this.setState({answer: text})}
         />
-        <Button
-          title='Submit'
+
+        <TouchableOpacity
+          style={{
+            width: 200,
+            marginRight:40,
+            marginLeft:40,
+            marginTop:50,
+            paddingTop:10,
+            paddingBottom:10,
+            backgroundColor:'#1E6738',
+            borderRadius:10,
+            borderWidth: 1,
+            borderColor: '#fff'
+          }}
           onPress={this.submit}
-        />
+          >
+          <Text style={{
+            color:'#fff',
+            textAlign:'center',
+            paddingLeft : 10,
+            paddingRight : 10
+          }}
+          >
+            Submit
+          </Text>
+        </TouchableOpacity>
+
+
       </View>
     )
   }
