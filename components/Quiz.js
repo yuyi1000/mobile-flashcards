@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, Button, TouchableOpacity } from 'react-native'
+import { View, Text, Button, TouchableOpacity, StyleSheet } from 'react-native'
 import { connect } from 'react-redux'
 
 class Quiz extends Component {
@@ -77,7 +77,7 @@ class Quiz extends Component {
     const remainingQuestions = totalQuestions - answeredQuestions
     if (!ready) {
       return (
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <View style={styles.container}>
           <Text>
             Still loading.
           </Text>
@@ -89,8 +89,8 @@ class Quiz extends Component {
 
     if (totalQuestions === 0) {
       return (
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-          <Text style={{ fontSize: 25, padding: 20 }}>
+        <View style={styles.container}>
+          <Text style={styles.descriptionText}>
             Sorry, you cannot take a quiz because there are no cards in the deck.
           </Text>
         </View>
@@ -102,11 +102,11 @@ class Quiz extends Component {
       const questionText = deck.questions[questionIndex].question
 
       return (
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-          <Text style={{ position: 'absolute', top: 5, left: 5, }}>
+        <View style={styles.container}>
+          <Text style={styles.topLeftText}>
             {remainingQuestions}/{totalQuestions}
           </Text>
-          <Text style={{ fontSize: 25, padding: 20 }}>
+          <Text style={styles.descriptionText}>
             {questionText}
           </Text>
           <Button
@@ -122,11 +122,11 @@ class Quiz extends Component {
 
     const answerText = deck.questions[answeredQuestions].answer
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text style={{ position: 'absolute', top: 5, left: 5, }}>
+      <View style={styles.container}>
+        <Text style={styles.topLeftText}>
           {remainingQuestions}/{totalQuestions}
         </Text>
-        <Text style={{ fontSize: 25, padding: 20 }}>
+        <Text style={styles.descriptionText}>
           {answerText}
         </Text>
         <Button
@@ -192,6 +192,24 @@ class Quiz extends Component {
     )
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  descriptionText: {
+    fontSize: 25,
+    padding: 20,
+  },
+  topLeftText: {
+    position: 'absolute',
+    top: 5,
+    left: 5,
+  },
+})
+
 
 function mapStateToProps (decks) {
   return {
