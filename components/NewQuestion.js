@@ -44,11 +44,12 @@ class NewQuestion extends Component {
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <TextInput style={{ margin: 10, borderWidth: 1 }}
+        <TextInput style={{ margin: 10, borderWidth: 1, backgroundColor: 'white', width: 300, height: 30, }}
           placeholder='Question'
           onChangeText={(text) => this.setState({question: text})}
         />
-        <TextInput style={{ margin: 10, borderWidth: 1 }}
+        <TextInput 
+          style={{ margin: 10, borderWidth: 1, backgroundColor: 'white', width: 300, height: 30, }}
           placeholder='Answer'
           onChangeText={(text) => this.setState({answer: text})}
         />
