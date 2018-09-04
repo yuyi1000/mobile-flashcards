@@ -29,7 +29,7 @@ class NewDeck extends Component {
     // console.log(this.state);
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>
+        <Text style={{ fontSize: 20,  }}>
           What is the title of your new deck?
         </Text>
         <TextInput style={{ margin: 10, borderWidth: 1, backgroundColor: 'white', width: 300, height: 30, }}
