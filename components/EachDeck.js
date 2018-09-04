@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, Button, TouchableOpacity } from 'react-native'
+import { View, Text, Button, TouchableOpacity, StyleSheet } from 'react-native'
 import { getDeck, deleteDeck } from '../utils/api'
 import { connect } from 'react-redux'
 import { removeDeck } from '../actions'
@@ -45,9 +45,9 @@ class EachDeck extends Component {
     const displayNumber = numberOfCards + (numberOfCards === 1 ? ' card' : ' cards')
     // console.log(title);
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text style={{ fontSize: 20 }}>{title}</Text>
-        <Text style={{ marginBottom: 50 }}>{displayNumber}</Text>
+      <View style={styles.container}>
+        <Text style={styles.titleText}>{title}</Text>
+        <Text style={styles.numberText}>{displayNumber}</Text>
 
         <TouchableOpacity
           style={{
@@ -133,6 +133,21 @@ class EachDeck extends Component {
     )
   }
 }
+
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  titleText: {
+    fontSize: 20,
+  },
+  numberText: {
+    marginBottom: 50
+  },
+})
 
 function mapStateToProps (decks) {
   return {
