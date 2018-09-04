@@ -42,11 +42,12 @@ class EachDeck extends Component {
     const deck = decks[deckTitle]
     const title = deck.title
     const numberOfCards = deck.questions.length
+    const displayNumber = numberOfCards + (numberOfCards === 1 ? ' card' : ' cards')
     // console.log(title);
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>{title}</Text>
-        <Text>{numberOfCards}</Text>
+        <Text style={{ fontSize: 20 }}>{title}</Text>
+        <Text>{displayNumber}</Text>
         <Button
           title='Add Card'
           onPress={() => this.props.navigation.navigate('NewQuestion', {
