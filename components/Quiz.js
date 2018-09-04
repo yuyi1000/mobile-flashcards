@@ -103,7 +103,7 @@ class Quiz extends Component {
 
       return (
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-          <Text>
+          <Text style={{ position: 'absolute', top: 5, left: 5, }}>
             {remainingQuestions}/{totalQuestions}
           </Text>
           <Text>
