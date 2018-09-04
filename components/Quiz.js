@@ -106,7 +106,7 @@ class Quiz extends Component {
           <Text style={{ position: 'absolute', top: 5, left: 5, }}>
             {remainingQuestions}/{totalQuestions}
           </Text>
-          <Text>
+          <Text style={{ fontSize: 25, }}>
             {questionText}
           </Text>
           <Button
@@ -123,9 +123,6 @@ class Quiz extends Component {
     const answerText = deck.questions[answeredQuestions].answer
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>
-          This is Quiz View.
-        </Text>
         <Text>
           {remainingQuestions}/{totalQuestions}
         </Text>
