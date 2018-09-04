@@ -119,6 +119,32 @@ class EachDeck extends Component {
           onPress={() => this.deleteDeckBtn(title)}
         />
 
+        <TouchableOpacity
+          style={{
+            width: 200,
+            marginRight:40,
+            marginLeft:40,
+            marginTop:10,
+            paddingTop:10,
+            paddingBottom:10,
+            backgroundColor:'#1E6738',
+            borderRadius:10,
+            borderWidth: 1,
+            borderColor: '#fff'
+          }}
+          onPress={() => this.deleteDeckBtn(title)}
+          >
+          <Text style={{
+            color:'#fff',
+            textAlign:'center',
+            paddingLeft : 10,
+            paddingRight : 10
+          }}
+          >
+            Delete Deck
+          </Text>
+        </TouchableOpacity>
+
       </View>
     )
   }
