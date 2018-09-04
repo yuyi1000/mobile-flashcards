@@ -30,9 +30,6 @@ class NewDeck extends Component {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
         <Text>
-          This is NewDeck View.
-        </Text>
-        <Text>
           What is the title of your new deck?
         </Text>
         <TextInput style={{ margin: 10, borderWidth: 1, backgroundColor: 'white', width: 300, height: 30, }}
