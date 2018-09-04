@@ -44,9 +44,6 @@ class NewQuestion extends Component {
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>
-          This is NewQuestion View.
-        </Text>
         <TextInput style={{ margin: 10, borderWidth: 1 }}
           placeholder='Question'
           onChangeText={(text) => this.setState({question: text})}
