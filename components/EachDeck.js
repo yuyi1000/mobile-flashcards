@@ -47,7 +47,7 @@ class EachDeck extends Component {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
         <Text style={{ fontSize: 20 }}>{title}</Text>
-        <Text>{displayNumber}</Text>
+        <Text style={{ marginBottom: 50 }}>{displayNumber}</Text>
 
         <TouchableOpacity
           style={{
